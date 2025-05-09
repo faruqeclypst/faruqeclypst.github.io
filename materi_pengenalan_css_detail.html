@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Pengenalan CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .judul {
+      color: #2563eb;
+    }
+    #utama {
+      color: #16a34a;
+    }
+    .kotak-latar {
+  background-color: lightblue;
+  background-image: url('https://picsum.photos/id/1015/800/400');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+    .font-custom {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-style: italic;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+
+  <header class="bg-blue-600 text-white py-6 shadow-md">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">Pengenalan CSS (Cascading Style Sheets)</h1>
+      <p class="text-lg">Memahami dasar-dasar dan penerapan CSS dalam pengembangan web</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8 space-y-10">
+
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Tujuan Pembelajaran</h2>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Memahami tentang konsep CSS</li>
+        <li>Memahami aturan penulisan pada CSS</li>
+        <li>Memahami selector sebagai pengontrol desain</li>
+        <li>Memahami pembuatan background</li>
+        <li>Memformat teks pada web</li>
+        <li>Memahami pengaturan bentuk font</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Konsep CSS</h2>
+      <p>CSS (Cascading Style Sheets) adalah bahasa desain yang digunakan untuk mengatur tampilan dan format dokumen HTML.</p>
+      <p class="mt-2">Dengan CSS, kita bisa memisahkan antara struktur konten (HTML) dengan desain visual. CSS bekerja melalui <strong>selector</strong> dan <strong>declaration</strong>.</p>
+      <p class="mt-2">Setiap declaration dalam CSS terdiri dari dua bagian utama:</p>
+      <ul class="list-disc pl-6 mt-2">
+        <li><strong>Property:</strong> Merupakan atribut atau hal yang ingin diatur, seperti <code>color</code>, <code>font-size</code>, atau <code>background</code>.</li>
+        <li><strong>Value:</strong> Nilai yang diberikan kepada property, seperti <code>red</code>, <code>14px</code>, atau <code>center</code>.</li>
+      </ul>
+      <p class="mt-2">Contoh: <code>color: red;</code> → <em>color</em> adalah property, dan <em>red</em> adalah value.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Aturan Penulisan CSS</h2>
+      <p>Contoh penulisan CSS dan HTML-nya:</p>
+      <pre class="bg-gray-100 p-4 rounded mt-2"><code>p {
+  color: red;
+  font-size: 14px;
+}</code></pre>
+      <h3 class="font-semibold mt-4">Contoh HTML:</h3>
+      <pre class="bg-gray-100 p-4 rounded mt-2"><code>&lt;p&gt;Ini adalah paragraf dengan teks merah dan ukuran 14px.&lt;/p&gt;</code></pre>
+      <p class="text-red-500 text-sm mt-4">Ini adalah paragraf dengan teks merah dan ukuran 14px.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Selector CSS</h2>
+      <p><strong>Selector</strong> digunakan untuk memilih elemen HTML yang ingin diberikan gaya (style). Selector bisa berdasarkan nama tag, class, atau id.</p>
+      <p><strong>Jenis-jenis Selector:</strong></p>
+      <ul class="list-disc pl-6 mt-2">
+        <li><code>p</code> → memilih semua elemen paragraf.</li>
+        <li><code>.judul</code> → memilih elemen dengan class="judul".</li>
+        <li><code>#utama</code> → memilih elemen dengan id="utama".</li>
+        <li><code>*</code> → universal selector, memilih semua elemen dalam dokumen.</li>
+        <li><code>div p</code> → descendant selector, memilih semua paragraf di dalam elemen <code>div</code>.</li>
+        <li><code>div > p</code> → child selector, memilih semua paragraf langsung di dalam elemen <code>div</code>.</li>
+        <li><code>p + span</code> → adjacent sibling selector, memilih elemen <code>span</code> yang langsung setelah elemen <code>p</code>.</li>
+        <li><code>[type="text"]</code> → attribute selector, memilih elemen berdasarkan nilai atributnya.</li>
+      </ul>
+      <p class="mt-2">Contoh penggunaan:</p>
+      <pre class="bg-gray-100 p-4 rounded mt-2"><code>.judul {
+  color: #2563eb;
+}
+#utama {
+  color: #16a34a;
+}</code></pre>
+      <h3 class="font-semibold mt-4">Contoh HTML:</h3>
+      <pre class="bg-gray-100 p-4 rounded mt-2"><code>&lt;p class="judul"&gt;Ini adalah paragraf dengan class .judul.&lt;/p&gt;
+&lt;p id="utama"&gt;Ini adalah paragraf dengan id #utama.&lt;/p&gt;</code></pre>
+      <p class="judul mt-2">Ini adalah paragraf dengan class <code>.judul</code>.</p>
+      <p id="utama">Ini adalah paragraf dengan id <code>#utama</code>.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Background CSS</h2>
+      <p>Contoh kode CSS untuk background:</p>
+      <pre class="bg-gray-100 p-4 rounded mt-2"><code>.kotak-latar {
+  background-color: lightblue;
+  background-image: url('https://via.placeholder.com/300');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}</code></pre>
+      <h3 class="font-semibold mt-4">Contoh HTML:</h3>
+      <pre class="bg-gray-100 p-4 rounded mt-2"><code>&lt;div class="kotak-latar"&gt;
+  Ini adalah kotak dengan gambar latar.
+&lt;/div&gt;</code></pre>
+      <div class="kotak-latar mt-2">Ini adalah kotak dengan gambar latar.</div>
+      <p class="mt-2">Penjelasan tambahan:
+        <ul class="list-disc pl-6">
+          <li><code>background-position: center;</code> → menempatkan gambar di tengah kotak.</li>
+          <li><code>background-attachment: fixed;</code> → membuat gambar latar tetap ketika halaman digulir.</li>
+        </ul>
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Format Teks pada Web</h2>
+      <p>Contoh CSS:</p>
+      <pre class="bg-gray-100 p-4 rounded mt-2"><code>h1 {
+  text-align: center;
+  color: navy;
+  text-decoration: underline;
+}</code></pre>
+      <h3 class="font-semibold mt-4">Contoh HTML:</h3>
+      <pre class="bg-gray-100 p-4 rounded mt-2"><code>&lt;h1&gt;Judul Tengah Berwarna Navy dan Garis Bawah&lt;/h1&gt;</code></pre>
+      <h1 class="text-center text-blue-900 underline mt-2">Judul Tengah Berwarna Navy dan Garis Bawah</h1>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Pengaturan Font</h2>
+      <p>Contoh CSS untuk pengaturan font:</p>
+      <pre class="bg-gray-100 p-4 rounded mt-2"><code>p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}</code></pre>
+      <h3 class="font-semibold mt-4">Contoh HTML:</h3>
+      <pre class="bg-gray-100 p-4 rounded mt-2"><code>&lt;p&gt;Ini adalah paragraf dengan font Arial, italic, bold, dan pengaturan lainnya.&lt;/p&gt;</code></pre>
+      <p class="font-custom mt-2">Ini adalah paragraf dengan font Arial, italic, bold, dan pengaturan lainnya.</p>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-6 bg-gray-200 text-sm text-gray-600">
+    &copy; 2025 Materi CSS - Alfaruq Asri, S.Pd
+  </footer>
+
+</body>
+</html>
